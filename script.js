@@ -177,7 +177,7 @@ window.addEventListener(
     { passive: true }
 );
 
-/* Пузырьки (hero) */
+/* Пузырьки  */
 const heroBubbles = document.querySelector(".hero-bubbles");
 if (heroBubbles && heroBubbles.children.length === 0) {
     for (let i = 0; i < 25; i++) {
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-/* 15m текст (is-active) */
+/* 15m текст  */
 const depth2 = document.getElementById("depth2");
 if (depth2) {
     const obs2 = new IntersectionObserver(
