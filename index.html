@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Underwater Museum</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="water-layer"></div>
+    <div class="particles"></div>
+    <div class="global-bubbles"></div>
+    <div class="artifact-counter" id="artifactCounter"></div>
+
+    <!-- начало -->
+    <section class="section hero" id="hero">
+        <div class="hero-bubbles"></div>
+        <h1>ПОД ВОДОЙ СКРЫВАЕТСЯ МУЗЕЙ</h1>
+        <p>забытый временем</p>
+        <button id="startBtn">Начать погружение</button>
+    </section>
+
+    <!-- 5m -->
+    <section class="section depth" id="depth1">
+        <div class="depth-header simple">
+            <div class="depth-kicker">ГЛУБИНА</div>
+            <div class="depth-title">
+                <span class="depth-num">5</span><span class="depth-unit">m</span>
+            </div>
+            <div class="depth-subtitle">Первые находки • нажми на артефакт</div>
+        </div>
+
+        <div class="depth-text">
+            <h3>Первые находки</h3>
+            <p>
+                Свет ещё проникает сквозь толщу воды. Здесь покоятся предметы недавнего
+                прошлого — потерянные, забытые, но не исчезнувшие. Сделай первый шаг
+                вглубь и найди артефакт.
+            </p>
+        </div>
+
+        <div class="artifact artifact-img collectible" data-level="1" data-info="artifactInfo1" id="artifact1">
+            <img src="images/5.png" alt="Артефакт 5m" />
+        </div>
+
+        <div class="artifact-info" id="artifactInfo1">
+            <h2>Плитка «Знак прилива»</h2>
+            <p>
+                Каменная плитка с морской разметкой, покрытая солью и илом. Учёные
+                считают, что это часть навигационной метки древнего маршрута: она
+                “подсказывала” безопасное течение в часы сильного прилива.
+            </p>
+        </div>
+    </section>
+
+    <!-- 15m -->
+    <section class="section depth" id="depth2">
+        <div class="depth-header simple">
+            <div class="depth-kicker">ГЛУБИНА</div>
+            <div class="depth-title">
+                <span class="depth-num">15</span><span class="depth-unit">m</span>
+            </div>
+            <div class="depth-subtitle">Колонны • открой проход к артефакту</div>
+        </div>
+
+        <p class="depth-instruction">
+            Нажимай на колонны. Только после нужной колонны появится артефакт.
+        </p>
+
+        <div class="ruins" id="ruins15">
+            <button class="column" aria-label="Колонна 1"></button>
+            <button class="column" aria-label="Колонна 2"></button>
+            <button class="column" aria-label="Колонна 3"></button>
+            <button class="column rightmost" aria-label="Колонна 4"></button>
+
+            <div class="artifact mask-artifact collectible" id="mask15" data-level="2" data-info="artifactInfo15"
+                aria-label="Маска">
+                <img src="images/6.png" alt="Маска" />
+            </div>
+        </div>
+
+        <div class="artifact-info" id="artifactInfo15">
+            <h2>Маска «Лицо глубины»</h2>
+            <p>
+                Тонкая ритуальная маска из тёмного камня, отполированная водой. Её
+                находили рядом с подводными руинами — будто она отмечала вход в «зал
+                памяти». Говорят, если смотреть на неё долго, слышится глухой звон — как
+                шаги по камню.
+            </p>
+        </div>
+    </section>
+
+    <!-- 25m -->
+    <section class="section depth" id="depth3">
+        <div class="depth-header simple">
+            <div class="depth-kicker">ГЛУБИНА</div>
+            <div class="depth-title">
+                <span class="depth-num">25</span><span class="depth-unit">m</span>
+            </div>
+            <div class="depth-subtitle">Пазл • собери изображение</div>
+        </div>
+
+        <p class="depth-instruction">
+            Перетаскивай фрагменты. Когда картинка соберётся — появится артефакт,
+            нажми на него.
+        </p>
+
+        <div class="puzzle-wrap">
+            <div class="puzzle-board" id="puzzleBoard">
+                <div class="puzzle-slot" data-slot="0"></div>
+                <div class="puzzle-slot" data-slot="1"></div>
+                <div class="puzzle-slot" data-slot="2"></div>
+                <div class="puzzle-slot" data-slot="3"></div>
+
+                <div class="puzzle-piece" data-piece="0"></div>
+                <div class="puzzle-piece" data-piece="1"></div>
+                <div class="puzzle-piece" data-piece="2"></div>
+                <div class="puzzle-piece" data-piece="3"></div>
+
+                <div class="artifact artifact-puzzle collectible" id="artifact25" data-level="3"
+                    data-info="artifactInfo25" aria-label="Артефакт 25m">
+                    <img src="images/7.png" alt="Артефакт 25m" />
+                </div>
+            </div>
+        </div>
+
+        <div class="artifact-info" id="artifactInfo25">
+            <h2>Фрагмент барельефа «Песня русалки»</h2>
+            <p>
+                Обломок древней стены с образом хранительницы течений. Говорят, её
+                каменное пение слышно только тем, кто заблудился в глубине.
+            </p>
+        </div>
+    </section>
+
+    <!-- 50m -->
+    <section class="section depth" id="depth4">
+        <div class="light"></div>
+
+        <div class="depth-header">
+            <div class="depth-kicker">ГЛУБИНА</div>
+            <div class="depth-title">
+                <span class="depth-num">50</span><span class="depth-unit">m</span>
+            </div>
+            <div class="depth-subtitle">Зона фонаря • ищи артефакт в темноте</div>
+        </div>
+
+        <p class="depth-instruction">
+            Наведи луч света на дно, чтобы проявить силуэт предмета. Когда артефакт
+            засветится — нажми, чтобы открыть описание.
+        </p>
+
+        <div class="artifact artifact-50 collectible" data-level="4" data-info="artifactInfo">
+            <img src="images/3.png" alt="Амфора" />
+        </div>
+
+        <div class="artifact-info" id="artifactInfo">
+            <h2>Разбитая амфора времени</h2>
+            <p>
+                Осколки древнего сосуда, найденного на глубине 50 метров. По легенде,
+                амфора принадлежала хранителям приливов. Говорят, она удерживала время
+                внутри себя — и разбилась в момент великого шторма. Если прислушаться,
+                можно услышать шёпот волн прошлого.
+            </p>
+        </div>
+    </section>
+
+    <!-- последний -->
+    <section class="section final" id="final">
+        <h2 id="finalText">Найди все артефакты</h2>
+        <button onclick="restart()">Начать заново</button>
+    </section>
+
+    <script src="script.js"></script>
+
+    <!-- водоросли -->
+    <div class="kelp-layer" aria-hidden="true">
+        <div class="kelp kelp-left">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="kelp kelp-right">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+</body>
+
+</html>
